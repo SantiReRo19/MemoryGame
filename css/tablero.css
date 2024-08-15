@@ -1,7 +1,10 @@
 body{
     font-family: "roboto", sans-serif f;
+    background-color: black;
+
 }
 h1{
     text-align: center;
     margin: 2rem;
+    color:aliceblue;
 }
