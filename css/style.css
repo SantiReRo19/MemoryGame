@@ -7,7 +7,7 @@ main{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    max-width: 700px;
+    max-width: 500px;
     margin: auto;
     grid-gap: 10px
    
@@ -20,14 +20,39 @@ figure img{
 
 figure{
     position: relative;
+    transition: all ease-in-out .6s;
     transform-style: preserve-3d;
     transform: perspective(600px) rotateY(0deg);
+    cursor: pointer;
+    box-shadow: 3px 3px 9px rgba(136, 72, 173, 0.6);
 }
-figure.open{
-    transform:perspective(600px) rotateY(180deg);
+figure::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 198, 247, 0);
+    transition: all ease 0.5s;
+}
+figure:hover::after{
+    background-color: rgba(255, 198, 247, 0.137);
+    
+}
+figure.opem{
+    transform:perspective(600px) rotateY(90deg);
+}
+figure .back{
+    display: block;
+    backface-visibility: hidden;
 }
 
 figure .tamaño-imagen {
     position: absolute;
     top: 0;
+    transform: perspective(600px) rotateY(90deg);
+    height: 100%;
+    overflow: hidden;
 }
